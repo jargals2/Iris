@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<h1>{% block title %}Predict{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+	<form method="get">
+		<label for="sep_len">Sepal_Length</label>
+		<input name="sl" id="sep_len" required>
+		<label for="sep_wid">Sepal Width</label>
+		<input name="sw" id="sep_wid" required>
+		<label for="pet_len">Petal Length</label>
+		<input name="pl" id="pet_len" required>
+		<label for="pet_wid">Petal Width</label>
+		<input name="pw" id="pet_wid" required>
+		<input type="submit" value="Predict">
+	</form>
+		{% if species %}
+		<div>
+			<label> {{species[0]}} <label>
+		</div>
+
+		{% endif %}
+{% endblock %}
